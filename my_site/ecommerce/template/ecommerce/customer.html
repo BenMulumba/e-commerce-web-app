@@ -1,0 +1,44 @@
+{% extends 'ecommerce/template/ecommerce/base.html' %}
+{% block content %}
+    
+    
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>email</th>
+                    <th>Date</th>
+                    <th>Product</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for customer_posts in customer_posts%}
+                <tr>
+                    <td>
+                        <p>{{customer_posts.customer_name}}</p>
+                    </td>
+
+                    <td>
+                        <p>{{customer_posts.phone}}</p>
+                    </td>
+
+                    <td>
+                        <p>{{customer_posts.email}}</p>
+                    </td>
+
+                    <td>
+                        <p>{{customer_posts.date}}</p>
+                    </td>
+
+                    <td>
+                        <p>{{ customer_posts.product}}</p>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+
+   
+{% endblock content %}    
