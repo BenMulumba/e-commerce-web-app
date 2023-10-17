@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-#  Adding post views using dictionary 
+#   Adding post views using dictionary 
 
 management=[
     {  
