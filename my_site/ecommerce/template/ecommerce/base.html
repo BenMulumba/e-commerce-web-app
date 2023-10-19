@@ -74,12 +74,23 @@
             <div class='container_login'>
               <div class='collapse navbar-collapse' id='navbarNav'>
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login'%}">Login</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'registration'%}"> Join</a>
-                  </li>
+
+                  <!-- Include if statement to includ either the login or logout button-->
+                  {% if user.is_authenticated %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'logout'%}">Logout</a>
+                    </li>
+                    
+                  {% else %}   
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'login'%}">Login</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'registration'%}"> Join</a>
+                    </li>
+                  {% endif %}
+                
                 </ul>
               </div>
             </div>

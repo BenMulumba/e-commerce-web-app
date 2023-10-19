@@ -1,0 +1,12 @@
+{% extends "ecommerce/template/ecommerce/base.html" %}
+{% load crispy_forms_tags %} 
+{% block content %}
+    <h2 style="color: #ed0c2a">You have been logged out </h2>
+
+    <div class='border-top pt-3'>
+        <small class='text-muted'>
+            Login Again <a href="{% url 'login' %}" class='ml-2'>Log in again </a>            
+        </small>
+    </div>
+
+{% endblock %}

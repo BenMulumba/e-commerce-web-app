@@ -32,8 +32,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'ecommerce.apps.EcommerceConfig',
-    'user.apps.UserConfig',
+    'ecommerce.apps.EcommerceConfig', #add the ecommerce app to the settings
+    'user.apps.UserConfig', #add the uset app to the settings
+    'crispy_forms', #add the crispy forms to the settings
+    'crispy_bootstrap4', #add bootstrap4
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,6 +126,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+CRISPY_TEMPLATE_PACK= 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+
+# ADD A SPECIFIED DIRECTION AFTER LOGGING IN 
+LOGIN_REDIRECT_URL ='home'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
