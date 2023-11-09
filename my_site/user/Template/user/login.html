@@ -8,6 +8,11 @@
             {% csrf_token %}
             <fieldset class='form-group'> 
                 <legend class='border-bottom mb-4'> Log In</legend>
+                    <div class="alert alert-warning" role="alert">
+                        <span>&#9888;</span>
+                        <em><small>You must log in before viewing the page</small></em>
+                    </div>
+                  
                 <!--print out the form created in your views-->
                 <!--add also a paragraph form(.as_p)-->
                 {{ form|crispy }}

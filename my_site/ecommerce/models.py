@@ -5,6 +5,7 @@ class customer (models.Model):
     name= models.CharField(max_length=255)
     phone=models.CharField(max_length=15)
     email=models.EmailField()
+    address=models.CharField(max_length=50)
     date=models.DateField(auto_now=True)
     product= models.CharField(max_length=255)
 
