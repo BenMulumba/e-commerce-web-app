@@ -1,141 +1,233 @@
-  {% load static %}
+{% load static %}
 <!DOCTYPE html>
-<html>  
-    <head>
-          <!-- Required meta tags -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html>
 
-      <!-- Bootstrap CSS -->
-      
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-      <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      
-          {%if title %}
-              <title>customer post {{title}} </title>
-          {%else %}
-              <title>customer_post</title>
-          {%endif%}
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'ecommerce/css/base.css' %}">
 
-    </head>
-    
-    <body>
-      <div class='container '>
-        <nav class="navbar navbar-expand-lg navbar-ligh bg-light">
-            <!-- this button toggle the navigation menu on  small screens-->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="container-fluid">
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <nav class="site-navigation position-relative text-right" role="navigation">
-                  <!--<ul class="nav nav-pills nav-fill">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Active</a>
-                    </li>-->
-                  <ul class="nav navbar-nav  nav-fill">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
-                    </li>
+  {% if title %}
+  <title>customer post {{title}} </title>
+  {% else %}
+  <title>customer_post</title>
+  {% endif %}
 
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="{% url 'product'%}">Product</a>
-                    </li>
+</head>
 
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="{% url 'inventory'%}">Inventory</a>
-                    </li>
+<body>
 
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="{% url 'customer' %}">Customer</a>
-                    </li>
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
 
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="{% url 'order'%}">Order</a>
-                    </li>
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="{% url 'about'%}">About</a>
-                    </li>
+      <!-- Navbar brand -->
+      <a class="navbar-brand mt-2 mt-lg-0" href="#">
+        <p>BMB</p>
+      </a>
 
-                  </ul>
-                </nav>
-                
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current='page' href="{% url 'home' %}">Home</a>
+        </li>
 
-                <!--<form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>-->
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'product' %}">Product</a>
+        </li>
 
-              </div>
-            </div>
-            <div class='container_login'>
-              <div class='collapse navbar-collapse' id='navbarNav'>
-                <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'card' %}">Card</a>
+        </li>
 
-                  <!-- Include if statement to includ either the login or logout button-->
-                  {% if user.is_authenticated %}
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url 'logout'%}">Logout</a>
-                    </li>
-                    
-                  {% else %}   
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url 'login'%}">Login</a>
-                    </li>
-
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url 'registration'%}"> Join</a>
-                    </li>
-                  {% endif %}
-                
-                </ul>
-              </div>
-            </div>
-          </nav>
-
-      </div>
-          
-
-          
-
-          <!--The body of other html file will display here-->
-            <div class='container'>
-
-              <!-- including the flashing message from views-->
-                {% if messages %}
-                  {% for message in messages %}
-                    <div class='alert alert-{{ message.tags}}'>
-                      {{ message }}
-                    </div>
-                  {% endfor %}
-                {% endif %}
-
-
-                <!-- extension of other html pages-->
-                {% block content%} {% endblock%}
-            </div>
+        <li class='nav-item'>
+          <a class='nav-link' href="{% url 'order' %}">Order</a>
+        </li>
         
+        <li class='nav-item'>
+          <a class='nav-link' href="{% url 'promotion' %}">Promotion</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
 
-      <footer class='footer'>
-        <div class='container'>
-          <div class='row'>
-            <div class='social-media-icon'>
-              <a href='' class='text-primary social-media-icon'><i class='fab fa-facebook-f'></i></a>
-              <a href='#' class='text-info social-media-icon'><i class='fab fa-twitter'></i></a>
-              <a href='#' class='text-danger social-media-icon'><i class='fab fa-instagram'></i></a>
-              <a href='https://call.whatsapp.com/video/pCgWbFX39lLLV5QWY2KjyT' class='text-success social-media-icon'><i class='fab fa-whatsapp' style='color: green;'></i></a>
-          </div>
-          </div>
+    <!-- User loggin and logout -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+
+          <!-- Check if the user is authenticated -->
+          {% if user.is_authenticated %}
+              <li class="nav-item">
+                  <img src="{% static 'path/to/your/profile/photo.jpg' %}" alt="Profile Photo"
+                      class="profile-photo">
+              </li>
+              <li class="nav-item">
+                  <span class="nav-link">{{ user.username }}</span>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              </li>
+          {% else %}
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'registration' %}">Join</a>
+              </li>
+          {% endif %}
+      </ul>
+  </div>
+
+  
+
+</nav>
+
+    <!-- The body of other HTML file will display here -->
+    <div class='container'>
+
+      <!-- Including the flashing message from views -->
+      {% if messages %}
+      {% for message in messages %}
+      <div class='alert alert-{{ message.tags }}'>
+        {{ message }}
+      </div>
+      {% endfor %}
+      {% endif %}
+      <br><br>
+      <!-- Extension of other HTML pages -->
+      {% block content %} {% endblock %}
+    </div>
+    <br>
+    <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+      <!-- Section: Social media -->
+      <section class="d-flex justify-content-between p-4" style="background-color: #6351ce">
+        <!-- Left -->
+        <div class="me-5">
+          <span>Get connected with us on social networks:</span>
         </div>
-      </footer>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- Left -->
 
+        <!-- Right -->
+        <div>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+
+          <a href="" class="text-white me-4">
+            <i class="fab fa-twitter"></i>
+          </a>
+
+          <a href="" class="text-white me-4">
+            <i class="fab fa-google"></i>
+          </a>
+
+          <a href="" class="text-white me-4">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a href="" class="text-white me-4">
+            <i class="fab fa-linkedin"></i>
+          </a>
+
+          <a href="" class="text-white me-4">
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a href='https://call.whatsapp.com/video/pCgWbFX39lLLV5QWY2KjyT' class='text-white me-4'>
+            <i class='fab fa-whatsapp'></i></a>
+        </div>
+
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold">BMB shopping</h6>
+
+              <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+              <p>
+                Discover a world of shopping at our e-commerce website, where quality meets convenience.
+                Explore a diverse range of products and enjoy seamless online shopping experiences
+              </p>
+            </div>
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold"> More Products</h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+
+              {% comment %} <p> Get more product from our partner</p> {% endcomment %}
+              <p>
+                <a href="https://jiji.co.ke" class="text-white">JIJI</a>
+              </p>
+              <p>
+                <a href="https://www.jumia.co.ke" class="text-white">JUMIA</a>
+              </p>
+              <p>
+                <a href="https://www.nike.com/vn/w/womens-shoes-5e1x6zy7ok" class="text-white">NIKE</a>
+              </p>
+              <p>
+                <a href="https://www.adidas.com/us" target='_blank' class="text-white">ADDIDAS</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">Contact</h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+              <p><i class="fas fa-home mr-3"></i> Nairobi, Kenya</p>
+              <p><i class="fas fa-envelope mr-3"></i> bmbenterprise@gmail.com</p>
+              <p><i class="fas fa-phone mr-3"></i> + 254 745 422 205</p>
+              <p><i class="fas fa-print mr-3"></i> + 00 000 000 000</p>
+
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2023 BMB
+       <!--<a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>-->
+      </div>
+      <!-- Copyright -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
+
 </html>

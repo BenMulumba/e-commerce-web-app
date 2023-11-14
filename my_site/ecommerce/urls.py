@@ -5,9 +5,9 @@ urlpatterns = [
     path("", views.home, name="home"),
     path("product/", views.product, name='product'),
     path('about/', views.about, name='about'),
-    path('inventory/', views.inventory, name='inventory'),
+    path('card/', views.card, name='card'),
     path('order/', views.order, name='order'),
-    path('customer/', views.customer, name='customer'),
+    path('promotion/', views.promotion, name='promotion'),
    
     
     path('base', views.base, name='base')

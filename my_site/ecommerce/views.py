@@ -4,7 +4,6 @@ from .forms import customerForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout 
 
-
 #   Adding post views using dictionary 
 
 management=[
@@ -33,7 +32,7 @@ def product (request):
 def base (request):
     return render (request,'ecommerce/template/base/.html',{'title':'base'})
 
-@login_required
+
 def home(request):
     return render(request, 'ecommerce/template/ecommerce/home.html',{'title': 'home'})
 
@@ -42,32 +41,16 @@ def about (request):
     return render(request, 'ecommerce/template/ecommerce/about.html',{'title':'about'})
 
 @login_required
-def inventory (request):
-    return render(request, 'ecommerce/template/ecommerce/inventory.html', {'title':'inventory'} )
+def card (request):
+    return render(request, 'ecommerce/template/ecommerce/cart.html', {'title':'card'} )
 
 @login_required
 def order (request):
     return render(request, 'ecommerce/template/ecommerce/order.html',{'title':'order'} )
 
-# create a view that handle the form submission and display the form to the user
-# def customer(request):
-#     if request.method == "POST":
-#         form =customerForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('customer')
-#     else:
-#         form =customerForm()
-
-#     customer_posts = customer.objects.all()
-#     return render(request,'ecommerce/template/ecommerce/customer.html', {'form': form})
-
 @login_required
-def customer (request):
-    context= {
-        'customer_posts': management 
-    }
-    return render(request, 'ecommerce/template/ecommerce/customer.html', context )
+def promotion (request):
+    return render (request, 'ecommerce/template/ecommerce/promotion.html',{'title':'promotion'} )
 
 # Adding a new parameter for the login system
 @login_required
