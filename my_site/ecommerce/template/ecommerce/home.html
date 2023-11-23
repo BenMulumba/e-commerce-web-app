@@ -1,7 +1,7 @@
 
 {% extends 'ecommerce/template/ecommerce/base.html' %}
-{% block content %}
 {% load static %}
+{% block content %}
 
 <!doctype html>
 <html lang="en">
@@ -101,154 +101,146 @@
   </symbol>
 </svg>
 <main>
-  <h1 class="visually-hidden text-center font-weight-bold" >Your Ultimate Shopping Experience Starts Here</h1>
+  <h1 class="visually-hidden text-center font-weight-bold " >Your Ultimate Shopping Experience Starts Here</h1>
 
   <div class="container px-4 py-5" id="featured-3">
-    <h2 class="pb-2 border-bottom">Featured</h2>
+    <h2 class="p-3 d-flex justify-content-center text-uppercase border-bottom">Categories</h2>
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <div class="feature col">
-        <div class="feature-icon bg-primary bg-gradient">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
-        </div>
 
-        <h2>Smartphone</h2>
-        <p>Shop with us tday</p>
+      <div class="feature col p-3">
+        <a href='{% url 'product'%}'>
+          <div class="feature-icon bg-primary bg-gradient">
+            <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
+          </div>
+          <img src="{% static 'ecommerce/images/phoness.jpg' %}" height='150' width='334' >
+          <h2 class='text-center'>Smartphone</h2>
+        </a>
       </div>
 
-      <div class="feature col">
-        <div class="feature-icon bg-primary bg-gradient">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
-        </div>
-        <h2>Smartphone</h2>
-        <a href='{% url 'product'%}'<p>Shop with us tday</p></a>
+      <div class="feature col p-3">
+        <a href='{% url 'product'%}'>
+          <div class="feature-icon bg-primary bg-gradient">
+            <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
+          </div>
+          <img src="{% static 'ecommerce/images/computer.jpg' %}" height='150' width='334'> 
+          <h2 class='text-center'>Computers</h2>
+        </a>
       </div>
       
-      <div class="feature col">
+      <div class="feature col p-3">
+        <a href='{% url 'product'%}'>
+          <div class="feature-icon bg-primary bg-gradient">
+            <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
+          </div>
+          
+          <img src="{% static 'ecommerce/images/tv.jpeg' %}" height='150' width='334' >
+          <h2 class='text-center'>Smart TVs</h2>
+        </a>
+      </div>
+      
+      <div class="feature col p-3">
+        <a href='{% url 'product'%}'>
+          <div class="feature-icon bg-primary bg-gradient">
+            <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
+          </div>
+          
+          <img src="{% static 'ecommerce/images/smart-home.jpg' %}" height='150' width='334' >
+          <h2 class='text-center'>Smart Home device</h2>
+        </a>
+      </div>
+      
+      <div class="feature col p-3">
         <div class="feature-icon bg-primary bg-gradient">
           <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
         </div>
-        <h2>Smartphone</h2>
+        
+        <img src="{% static 'ecommerce/images/phoness.jpg' %}" height='150' width='334' >
+        
+        <h2>Gaming Consoles</h2>
         <p>Shop with us tday</p>
       </div>
       
-      <div class="feature col">
+      <div class="feature col p-3">
         <div class="feature-icon bg-primary bg-gradient">
           <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
         </div>
-        <h2>Smartphone</h2>
+        
+        <img src="{% static 'ecommerce/images/phoness.jpg' %}" height='150' width='334' >
+        
+        <h2>Wireless speakers</h2>
         <p>Shop with us tday</p>
       </div>
       
-      <div class="feature col">
+      <div class="feature col p-3">
         <div class="feature-icon bg-primary bg-gradient">
           <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
         </div>
-        <h2>Smartphone</h2>
+        
+        <img src="{% static 'ecommerce/images/speaker.jpeg' %}" height='150' width='334' >
+        
+        <h2>Digital cameras</h2>
         <p>Shop with us tday</p>
       </div>
       
-      <div class="feature col">
+      <div class="feature col p-3">
         <div class="feature-icon bg-primary bg-gradient">
           <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
         </div>
-        <h2>Smartphone</h2>
+        
+        <img src="{% static 'ecommerce/images/smartwatch.jpeg' %}" height='150' width='334' >
+        
+        <h2>Smartwatches</h2>
         <p>Shop with us tday</p>
       </div>
       
-      <div class="feature col">
+      <div class="feature col p-3">
         <div class="feature-icon bg-primary bg-gradient">
           <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
         </div>
-        <h2>Smartphone</h2>
+        
+        <img src="{% static 'ecommerce/images/portable-charger.jpg' %}" height='150' width='334' >
+        
+        <h2>Portable Charges</h2>
         <p>Shop with us tday</p>
       </div>
       
-      <div class="feature col">
+      <div class="feature col p-3">
         <div class="feature-icon bg-primary bg-gradient">
           <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
         </div>
-        <h2>Smartphone</h2>
+        
+        <img src="{% static 'ecommerce/images/music1.jpg' %}" height='150' width='334' >
+        
+        <h2>Musical instruments</h2>
         <p>Shop with us tday</p>
       </div>
       
-      <div class="feature col">
+      <div class="feature col p-3">
         <div class="feature-icon bg-primary bg-gradient">
           <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
         </div>
-        <h2>Smartphone</h2>
+        
+        <img src="{% static 'ecommerce/images/drones.jpg' %}" height='150' width='334' >
+        
+        <h2>Drones</h2>
         <p>Shop with us tday</p>
       </div>
       
-      <div class="feature col">
+      <div class="feature col p-3">
         <div class="feature-icon bg-primary bg-gradient">
           <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
         </div>
-        <h2>Smartphone</h2>
-        <p>Shop with us tday</p>
-      </div>
-      
-      <div class="feature col">
-        <div class="feature-icon bg-primary bg-gradient">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
-        </div>
-        <h2>Smartphone</h2>
-        <p>Shop with us tday</p>
-      </div>
-      
-      <div class="feature col">
-        <div class="feature-icon bg-primary bg-gradient">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
-        </div>
-        <h2>Smartphone</h2>
+        
+        <img src="{% static 'ecommerce/images/bg2.avif' %}" height='150' width='334' >
+        
+        <h2>Check more</h2>
         <p>Shop with us tday</p>
       </div>      
     </div>
   </div>
 
-  <div class="container px-4 py-5" id="custom-cards">
-    <h2 class="pb-2 border-bottom">Custom cards</h2>
-    <div class='row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5'>
-        <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Custom card 1</h2>
-                        <ul class="d-flex list-unstyled mt-auto">
-                            <!-- some items-->
-                        </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Custom card 2</h2>
-                        <ul class="d-flex list-unstyled mt-auto">
-                            <!-- some items-->
-                        </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
-                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                    <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Custom card 3</h2>
-                        <ul class="d-flex list-unstyled mt-auto">
-                            <!-- some items-->
-                        </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-  </div>
-
-  <</main>
-
-
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-      
+    </main>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>      
   </body>
 </html>
     

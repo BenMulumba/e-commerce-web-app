@@ -10,15 +10,6 @@ class customer (models.Model):
     product= models.CharField(max_length=255)
 
 
-class Inventory (models.Model):
-    name= models.CharField(max_length=50)
-    stock_in=models.IntegerField()
-    stock_out=models.IntegerField()
-    inital_amount= models.IntegerField()
-    final_amount= models.IntegerField()
-    condition_status=models.CharField(max_length=50)
-    order_number=models.CharField(max_length=50)
-
 class product (models.Model):
     code=models.CharField(max_length=50)
     name=models.CharField(max_length=50)
@@ -33,4 +24,7 @@ class order(models.Model):
     item = models.CharField(max_length=50)
     date = models.DateField(auto_now=True)
     customer =models.CharField(max_length=100)
+
+# class user(models.Model):
+
 

@@ -24,7 +24,7 @@
 <body>
 
     <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #dce0f5" >
   
     <!-- Toggle button -->
     <button
@@ -40,7 +40,7 @@
     </button>
 
     <!-- Collapsible wrapper -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
 
       <!-- Navbar brand -->
       <a class="navbar-brand mt-2 mt-lg-0" href="#">
@@ -78,10 +78,10 @@
 
           <!-- Check if the user is authenticated -->
           {% if user.is_authenticated %}
-              <li class="nav-item">
+              <!--<li class="nav-item">
                   <img src="{% static 'path/to/your/profile/photo.jpg' %}" alt="Profile Photo"
                       class="profile-photo">
-              </li>
+              </li>-->
               <li class="nav-item">
                   <span class="nav-link">{{ user.username }}</span>
               </li>
@@ -97,9 +97,7 @@
               </li>
           {% endif %}
       </ul>
-  </div>
-
-  
+  </div> 
 
 </nav>
 
@@ -119,9 +117,9 @@
       {% block content %} {% endblock %}
     </div>
     <br>
-    <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+    <footer class="text-center text-lg-start text-white" style="background-color: #292142">
       <!-- Section: Social media -->
-      <section class="d-flex justify-content-between p-4" style="background-color: #6351ce">
+      <section class="d-flex justify-content-between p-4" style="background-color: #292142">
         <!-- Left -->
         <div class="me-5">
           <span>Get connected with us on social networks:</span>
